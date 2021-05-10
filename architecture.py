@@ -29,12 +29,16 @@ def toy_model(x,show_dim = False):
         if show_dim:
             print(x.shape)
         return x
+    
+    x = conv_block(x,3,3,10,2,show_dim)
+    x = conv_block(x,3,16,5,1,show_dim)
+    x = conv_block(x,16,16,5,1,show_dim)
+    #x = conv_block(x,1,1,5,1,show_dim)
+    #x = conv_block(x,3,16,25,10,show_dim)
 
-    x = conv_block(x,3,16,25,10,show_dim)
+    #x = conv_block(x,16,16,5,2,show_dim)
 
-    x = conv_block(x,16,16,5,2,show_dim)
-
-    x = conv_block(x,16,32,5,2,show_dim)
+    #x = conv_block(x,16,32,5,2,show_dim)
 
     # flatten output and put through a fully connected layer
     flat1, size1 = flatten_layer(x)
