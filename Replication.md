@@ -1,4 +1,4 @@
-## Replication Instructions
+## Replication Instructions (for AWS)
 
 1. Spin up [AWS Deep Learning AMI (Ubuntu 18.04 OS) Version 43.0](https://aws.amazon.com/marketplace/pp/B07Y43P7X5). To access a gpu, use a g3.4x large infrastructure, and to replicate our performance results, use a g3.16xlarge.
 
@@ -9,18 +9,16 @@
 `ssh -L localhost:8888:localhost:8888 -i ~/.ssh/CS205-key.pem ubuntu@<Your public instance DNS>`
 
 4. Next steps are on the machine. Pull the git repo:
-`git clone https://github.com/msbutler/cs205final`
+`git clone https://github.com/msbutler/am231final`
 
 5. Activate the proper environment:
 `source activate tensorflow_p37`
 
-6. Run the vanilla model
+6. Run the vanilla model (within the file, set semi=True for the semisupervised model and False for the fully supervised version)
 `python run.py`
 
-7. Run the performance tests
-`python performance.py`
 
-8. To play with the jupyter notebooks, run the following in your terminal on the ami:
+8. To play with the old jupyter notebooks, run the following in your terminal on the ami:
     - `jupyter notebook`
 
    - and copy and paste the url printed to your consol into your browser. looks kinda like:
